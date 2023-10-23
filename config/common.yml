@@ -1,0 +1,66 @@
+modules:
+  - type: files
+    files:
+      - usr: /usr # copy static configurations
+                  #
+                  # copies config/files/usr into your image's /usr
+                  #
+                  # configuration you wish to end up in /etc/ on the booted system
+                  # should be added into /usr/etc/ as that is the proper "distro"
+                  # config directory on ostree. Read more in the files module's README
+
+  - type: rpm-ostree
+    repos:
+      - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+    install:
+      - tailscale
+      - alacritty
+      - etckeeper
+      - bat
+      - exa
+      - wireshark
+    remove:
+      - firefox # default firefox removed in favor of flatpak
+      - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
+
+  - type: default-flatpaks
+    system:
+      install:
+        - org.mozilla.firefox
+
+  - type: bling # configure what to pull in from ublue-os/bling
+    install:
+      - justfiles # add "!include /usr/share/ublue-os/just/bling.just"
+                  # in your custom.just (added by default) or local justfile
+      - ublue-update # https://github.com/ublue-os/ublue-update
+      # - nix-installer # shell shortcuts for determinate system's nix installers
+      # - ublue-os-wallpapers
+      # - dconf-update-service # a service unit that updates the dconf db on boot
+      # - devpod # https://devpod.sh/ as an rpm
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - Hack
+
+  - type: systemd
+    system:
+      enabled:
+        - tailscaled
+
+  - type: yafti # if included, yafti and it's dependencies (pip & libadwaita)
+                #  will be installed and set up
+    custom-flatpaks: # this section is optional
+      - Telegram Desktop: org.telegram.desktop
+      - SyncThingy: com.github.zocker_160.SyncThingy
+      - Obsidian: md.obsidian.Obsidian
+      - VLC: org.videolan.VLC
+      - Discord: com.discordapp.Discord 
+      - Steam: com.valvesoftware.Steam
+      - Heroic Games Launcher: com.heroicgameslauncher.hgl
+      - Prism Launcher: org.prismlauncher.PrismLauncher
+
+  - type: script
+    scripts:
+      # this sets up the proper policy & signing files for signed images to work
+      - signing.sh

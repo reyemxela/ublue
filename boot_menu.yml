@@ -1,5 +1,9 @@
 ublue_variants:
-  - label: ublue-os/startingpoint
+  - label: reyemxela/ublue
     ks: /kickstart/ublue-os.ks
     flavors:
-      - label: startingpoint
+      - label: ublue
+  - label: reyemxela/ublue-nvidia
+    ks: /kickstart/ublue-os-nvidia.ks
+    flavors:
+      - label: ublue-nvidia
