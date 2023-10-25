@@ -13,13 +13,24 @@ modules:
     repos:
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
     install:
-      - tailscale
+      # essentials
       - alacritty
-      - etckeeper
       - bat
-      - exa
+      - etckeeper
+      - eza
+      - tailscale
+      # extras
       - ddccontrol
       - wireshark
+      # virtualization
+      - guestfs-tools
+      - libvirt-daemon-config-network
+      - libvirt-daemon-kvm
+      - qemu-kvm
+      - virt-install
+      - virt-manager
+      - virt-viewer
+
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
@@ -48,6 +59,7 @@ modules:
     system:
       enabled:
         - tailscaled
+        - libvirtd
 
   - type: script
     scripts:
