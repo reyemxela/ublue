@@ -41,7 +41,7 @@ modules:
     system:
       enabled:
         - tailscaled
-        - libvirtd
+        # - libvirtd
 
   - type: script
     scripts:
