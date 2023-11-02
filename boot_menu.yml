@@ -3,7 +3,8 @@ ublue_variants:
     ks: /kickstart/ublue-os.ks
     flavors:
       - label: ublue
-  - label: reyemxela/ublue-nvidia
-    ks: /kickstart/ublue-os-nvidia.ks
-    flavors:
       - label: ublue-nvidia
+        ks: /kickstart/ublue-os-nvidia.ks
+      - label: ublue-server
+      - label: ublue-server-nvidia
+        ks: /kickstart/ublue-os-nvidia.ks
