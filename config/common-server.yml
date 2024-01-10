@@ -12,6 +12,7 @@ modules:
   - type: rpm-ostree
     repos:
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+      - https://copr.fedorainfracloud.org/coprs/errornointernet/mergerfs/repo/fedora-39/errornointernet-mergerfs-fedora-39.repo
     install:
       # essentials
       - bat
@@ -25,7 +26,9 @@ modules:
       # - qemu-kvm
       # - virt-install
       # server
+      - mergerfs
       - samba
+      - snapraid
 
   - type: bling # configure what to pull in from ublue-os/bling
     install:
