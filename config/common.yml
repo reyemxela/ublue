@@ -21,6 +21,7 @@ modules:
       - tailscale
       # extras
       - ddccontrol
+      - picocom
       - wireshark
       # virtualization
       - guestfs-tools
