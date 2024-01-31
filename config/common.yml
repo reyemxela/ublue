@@ -20,6 +20,7 @@ modules:
       - eza
       - tailscale
       # extras
+      - code
       - ddccontrol
       - picocom
       - wireshark
