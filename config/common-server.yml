@@ -20,11 +20,9 @@ modules:
       - eza
       - tailscale
       # # virtualization
-      # - guestfs-tools
-      # - libvirt-daemon-config-network
-      # - libvirt-daemon-kvm
-      # - qemu-kvm
-      # - virt-install
+      - guestfs-tools
+      - libvirt
+      - virt-install
       # server
       - mergerfs
       - samba
@@ -34,7 +32,7 @@ modules:
     system:
       enabled:
         - tailscaled
-        # - libvirtd
+        - libvirtd
 
   - type: script
     scripts:
