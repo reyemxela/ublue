@@ -20,6 +20,7 @@ modules:
       - etckeeper
       - eza
       - tailscale
+      - zsh
       # extras
       - code
       - ddccontrol

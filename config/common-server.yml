@@ -19,6 +19,7 @@ modules:
       - etckeeper
       - eza
       - tailscale
+      - zsh
       # # virtualization
       - guestfs-tools
       - libvirt
