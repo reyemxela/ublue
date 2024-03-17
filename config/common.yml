@@ -56,4 +56,8 @@ modules:
         - tailscaled
         - sshd
 
+  - type: script
+    scripts:
+      - adapta-theme.sh
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

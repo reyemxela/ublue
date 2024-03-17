@@ -1,0 +1,15 @@
+[Desktops]
+Number=4
+Rows=1
+
+[Effect-wobblywindows]
+Drag=90
+Stiffness=6
+WobblynessLevel=2
+
+[Plugins]
+wobblywindowsEnabled=true
+
+[org.kde.kdecoration2]
+library=org.kde.kwin.aurorae
+theme=__aurorae__svg__Adapta
