@@ -1,3 +1,6 @@
+# ARCHIVED
+Moving away from BlueBuild to a custom Containerfile-based system: [https://github.com/reyemxela/ublue-custom](https://github.com/reyemxela/ublue-custom)
+
 # reyemxela uBlue &nbsp; [![build-ublue](https://github.com/reyemxela/ublue/actions/workflows/build.yml/badge.svg)](https://github.com/reyemxela/ublue/actions/workflows/build.yml)
 
 See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
